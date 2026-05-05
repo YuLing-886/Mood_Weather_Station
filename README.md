@@ -2,7 +2,7 @@
 
 > 数据挖掘课程大作业 — 基于 COVID-19 期间微博数据的省级公众情绪演变分析
 
-**在线演示**: https://mood-weather-stations.netlify.app/
+**在线演示**: https://mood-weather-station.pages.dev/
 
 ## 数据挖掘方法
 
@@ -37,7 +37,7 @@
 | 验证基准 | SMP2020-EWECT (Accuracy 73.3%, Macro F1 0.662) |
 | 前端 | React 18, TypeScript, ECharts, Framer Motion |
 | 构建 | Vite 7, CSS Modules |
-| 部署 | Netlify |
+| 部署 | Cloudflare Pages |
 
 ## 快速开始
 
