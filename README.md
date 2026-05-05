@@ -1,6 +1,24 @@
 # 情绪气象站 · Mood Weather Station
 
-基于 COVID-19 期间微博数据的省级公众情绪演变分析系统。通过 DeepSeek API 对 76,441 条微博进行 6 维情绪标注，从时间、空间、异常事件和聚类画像四个维度展示情绪变化。
+> 数据挖掘课程大作业 — 基于 COVID-19 期间微博数据的省级公众情绪演变分析
+
+**在线演示**: https://mood-weather-stations.netlify.app/
+
+## 数据挖掘方法
+
+本项目应用了以下数据挖掘算法与技术：
+
+| 算法 | 应用场景 | 实现 |
+|---|---|---|
+| **LLM 文本分类** | DeepSeek API 对 76,441 条微博进行 6 维情绪标注 | `scripts/02_label_emotions.py` |
+| **Rolling Z-Score 异常检测** | 对全国情绪时序做滑动窗口检测，识别情绪突变周 | `scripts/05_detect_anomalies.py` |
+| **层次聚类 (Agglomerative Clustering)** | 基于省份情绪特征向量做层次聚类，生成 dendrogram | `scripts/06_cluster_provinces.py` |
+| **KMeans 聚类** | 与层次聚类对照，通过轮廓系数选择最优 K | `scripts/06_cluster_provinces.py` |
+| **聚类演化分析** | 按月独立聚类，按风险得分对齐标签，追踪省份聚类迁移 | `scripts/07_cluster_evolution.py` |
+| **特征工程** | 6 维情绪均值 + 情绪强度 + 恐惧/喜悦方差 → 9 维特征向量 | `scripts/06_cluster_provinces.py` |
+| **标准化 (StandardScaler)** | 聚类前对特征做 Z-Score 标准化 | `scripts/06_cluster_provinces.py` |
+| **轮廓系数评估** | 纯 Python 实现，评估聚类质量 (silhouette=0.27) | `scripts/06_cluster_provinces.py` |
+| **外部验证** | SMP2020-EWECT 数据集验证标注准确性 (Accuracy 73.3%, Macro F1 0.662) | `scripts/03_validate_emotions.py` |
 
 ## 功能
 
@@ -19,6 +37,7 @@
 | 验证基准 | SMP2020-EWECT (Accuracy 73.3%, Macro F1 0.662) |
 | 前端 | React 18, TypeScript, ECharts, Framer Motion |
 | 构建 | Vite 7, CSS Modules |
+| 部署 | Netlify |
 
 ## 快速开始
 
@@ -62,14 +81,13 @@ Mood_Weather_Station/
 │   │   └── utils/          # 日期、分析、指标工具
 │   └── public/
 │       ├── data/           # 前端静态数据 (CSV/JSON)
-│       ├── maps/           # 地图底图和 GeoJSON
+│       ├── maps/           # 地图底图
 │       └── analysis/       # 词云等可视化产物
 ├── scripts/                # Python 数据管线 (00-08)
 ├── data/
 │   ├── raw/                # 原始数据 (COV-Weibo2.0, SMP2020)
 │   └── processed/          # 处理后数据集
-├── docs/                   # 方法论文档
-└── analysis/               # 验证报告和可视化产物
+└── docs/                   # 方法论文档
 ```
 
 ## 数据管线
