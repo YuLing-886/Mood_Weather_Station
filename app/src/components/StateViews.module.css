@@ -1,0 +1,40 @@
+.skeleton {
+  display: grid;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.skeleton span {
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--border), var(--border-strong), var(--border));
+  background-size: 220% 100%;
+  animation: pulse 1.35s ease-in-out infinite;
+}
+
+.empty {
+  min-height: 180px;
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  text-align: center;
+  color: var(--text);
+  border: 1px dashed var(--border-strong);
+  border-radius: 16px;
+  background: var(--surface-warm);
+}
+
+.empty strong {
+  font-size: 16px;
+}
+
+.empty p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+@keyframes pulse {
+  to {
+    background-position: -220% 0;
+  }
+}

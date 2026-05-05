@@ -1,0 +1,190 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.gridLayer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: var(--grid-overlay);
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+  z-index: 0;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px clamp(20px, 4vw, 56px);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(22px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 200px;
+}
+
+.brandMark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: var(--surface-solid);
+  font-family: "Fira Code", monospace;
+  font-weight: 700;
+  font-size: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 16px;
+  color: var(--text);
+}
+
+.brand small {
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-family: "Fira Code", monospace;
+  font-size: 11px;
+}
+
+.nav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav button {
+  min-width: 100px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.nav button:hover,
+.nav button:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--text);
+  outline: none;
+}
+
+.nav .active {
+  color: var(--surface-solid);
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+}
+
+.nav span,
+.nav small {
+  display: block;
+  line-height: 1.2;
+}
+
+.nav small {
+  margin-top: 2px;
+  color: inherit;
+  opacity: 0.7;
+  font-family: "Fira Code", monospace;
+  font-size: 10px;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  padding: 28px clamp(20px, 4vw, 56px) 52px;
+}
+
+.loadingPanel,
+.errorPanel {
+  max-width: 760px;
+  margin: 10vh auto 0;
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.loadingPanel h1,
+.errorPanel h1 {
+  margin: 0 0 24px;
+  font-size: 32px;
+  color: var(--text);
+}
+
+.errorPanel p {
+  color: var(--emotion-anger);
+}
+
+/* Theme switcher */
+.themeSwitcher {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.themeBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 180ms ease;
+  position: relative;
+}
+
+.themeBtn:hover {
+  transform: scale(1.1);
+}
+
+.themeBtn.activeTheme {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.themeBtn[data-theme="warmIvory"] {
+  background: linear-gradient(135deg, #F8F4EE, #E07A3A);
+}
+
+.themeBtn[data-theme="paperBeige"] {
+  background: linear-gradient(135deg, #F7F5F1, #C47D3E);
+}
+
+.themeBtn[data-theme="softDataBlue"] {
+  background: linear-gradient(135deg, #F4F6F8, #3B7DD8);
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    justify-content: flex-start;
+  }
+}

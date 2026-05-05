@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-05-05T16:36:23.366319",
+  "files": [
+    {
+      "path": "data/processed/emotion_panel_weekly.csv",
+      "source": "data\\processed\\emotion_panel_weekly.csv",
+      "hash": "4406d50a047d",
+      "row_count": 1860,
+      "size_bytes": 490702
+    },
+    {
+      "path": "data/processed/emotion_panel_monthly.csv",
+      "source": "data\\processed\\emotion_panel_monthly.csv",
+      "hash": "ef90ff633853",
+      "row_count": 442,
+      "size_bytes": 93051
+    },
+    {
+      "path": "data/processed/emotion_national_timeline.csv",
+      "source": "data\\processed\\emotion_national_timeline.csv",
+      "hash": "4aff817b2bb9",
+      "row_count": 58,
+      "size_bytes": 17336
+    },
+    {
+      "path": "data/processed/province_emotion_vectors.csv",
+      "source": "data\\processed\\province_emotion_vectors.csv",
+      "hash": "5d3ae424170f",
+      "row_count": 34,
+      "size_bytes": 6605
+    },
+    {
+      "path": "data/processed/anomaly_detection.json",
+      "source": "data\\processed\\anomaly_detection.json",
+      "hash": "1fa6b0e55a5d",
+      "row_count": 22,
+      "size_bytes": 6479
+    },
+    {
+      "path": "data/processed/cluster_labels.csv",
+      "source": "data\\processed\\cluster_labels.csv",
+      "hash": "eca7f9ec33c7",
+      "row_count": 34,
+      "size_bytes": 525
+    },
+    {
+      "path": "data/processed/monthly_cluster_labels.csv",
+      "source": "tmp\\07_monthly_cluster_labels.csv",
+      "hash": "6078237e929b",
+      "row_count": 34,
+      "size_bytes": 1323
+    },
+    {
+      "path": "analysis\\wordclouds\\national_peak_fear.png",
+      "source": "analysis\\wordclouds\\national_peak_fear.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 205586
+    },
+    {
+      "path": "analysis\\wordclouds\\national_peak_joy.png",
+      "source": "analysis\\wordclouds\\national_peak_joy.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 182440
+    },
+    {
+      "path": "analysis\\wordclouds\\province_上海.png",
+      "source": "analysis\\wordclouds\\province_上海.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 153300
+    },
+    {
+      "path": "analysis\\wordclouds\\province_云南.png",
+      "source": "analysis\\wordclouds\\province_云南.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 155687
+    },
+    {
+      "path": "analysis\\wordclouds\\province_北京.png",
+      "source": "analysis\\wordclouds\\province_北京.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 148527
+    },
+    {
+      "path": "analysis\\wordclouds\\province_山东.png",
+      "source": "analysis\\wordclouds\\province_山东.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 148514
+    },
+    {
+      "path": "analysis\\wordclouds\\province_广东.png",
+      "source": "analysis\\wordclouds\\province_广东.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 156929
+    },
+    {
+      "path": "analysis\\wordclouds\\province_江苏.png",
+      "source": "analysis\\wordclouds\\province_江苏.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 163231
+    },
+    {
+      "path": "analysis\\wordclouds\\province_河南.png",
+      "source": "analysis\\wordclouds\\province_河南.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 157315
+    },
+    {
+      "path": "analysis\\wordclouds\\province_浙江.png",
+      "source": "analysis\\wordclouds\\province_浙江.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 151980
+    },
+    {
+      "path": "analysis\\wordclouds\\province_湖南.png",
+      "source": "analysis\\wordclouds\\province_湖南.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 151722
+    },
+    {
+      "path": "analysis\\wordclouds\\province_福建.png",
+      "source": "analysis\\wordclouds\\province_福建.png",
+      "hash": "",
+      "row_count": "N/A (image)",
+      "size_bytes": 151605
+    }
+  ]
+}
