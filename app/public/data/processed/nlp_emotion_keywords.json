@@ -1,0 +1,738 @@
+{
+  "meta": {
+    "generated_at": "2026-05-06T17:20:46.952576",
+    "method": "emotion_weighted_keyword_tfidf"
+  },
+  "emotions": {
+    "neutral": [
+      {
+        "word": "电影院",
+        "avg_tfidf": 0.5615,
+        "peak_week": "2020-W29",
+        "peak_tfidf": 0.5615
+      },
+      {
+        "word": "行者",
+        "avg_tfidf": 0.5608,
+        "peak_week": "2020-W38",
+        "peak_tfidf": 0.5608
+      },
+      {
+        "word": "表彰大会",
+        "avg_tfidf": 0.5135,
+        "peak_week": "2020-W37",
+        "peak_tfidf": 0.5135
+      },
+      {
+        "word": "哀悼",
+        "avg_tfidf": 0.5101,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.5101
+      },
+      {
+        "word": "打卡",
+        "avg_tfidf": 0.4766,
+        "peak_week": "2020-W08",
+        "peak_tfidf": 0.4766
+      },
+      {
+        "word": "同胞",
+        "avg_tfidf": 0.3774,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.3774
+      },
+      {
+        "word": "不明",
+        "avg_tfidf": 0.3772,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.3772
+      },
+      {
+        "word": "缅怀",
+        "avg_tfidf": 0.3627,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.3627
+      },
+      {
+        "word": "工资",
+        "avg_tfidf": 0.3317,
+        "peak_week": "2020-W53",
+        "peak_tfidf": 0.3432
+      },
+      {
+        "word": "新发",
+        "avg_tfidf": 0.3304,
+        "peak_week": "2020-W25",
+        "peak_tfidf": 0.343
+      },
+      {
+        "word": "个股",
+        "avg_tfidf": 0.3236,
+        "peak_week": "2020-W36",
+        "peak_tfidf": 0.3236
+      },
+      {
+        "word": "退热",
+        "avg_tfidf": 0.3081,
+        "peak_week": "2019-W51",
+        "peak_tfidf": 0.3081
+      },
+      {
+        "word": "清明",
+        "avg_tfidf": 0.2869,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.2869
+      },
+      {
+        "word": "导弹",
+        "avg_tfidf": 0.2718,
+        "peak_week": "2019-W51",
+        "peak_tfidf": 0.2718
+      },
+      {
+        "word": "海鲜城",
+        "avg_tfidf": 0.269,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.269
+      },
+      {
+        "word": "最美",
+        "avg_tfidf": 0.2592,
+        "peak_week": "2020-W38",
+        "peak_tfidf": 0.5723
+      },
+      {
+        "word": "郫都区",
+        "avg_tfidf": 0.2512,
+        "peak_week": "2020-W50",
+        "peak_tfidf": 0.2512
+      },
+      {
+        "word": "逝去",
+        "avg_tfidf": 0.2449,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.2449
+      },
+      {
+        "word": "全民",
+        "avg_tfidf": 0.2425,
+        "peak_week": "2020-W53",
+        "peak_tfidf": 0.2425
+      },
+      {
+        "word": "逝世",
+        "avg_tfidf": 0.237,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.237
+      },
+      {
+        "word": "教师",
+        "avg_tfidf": 0.2351,
+        "peak_week": "2020-W37",
+        "peak_tfidf": 0.2351
+      },
+      {
+        "word": "断定",
+        "avg_tfidf": 0.2295,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.2295
+      },
+      {
+        "word": "东亚",
+        "avg_tfidf": 0.229,
+        "peak_week": "2019-W51",
+        "peak_tfidf": 0.229
+      },
+      {
+        "word": "蔡徐坤",
+        "avg_tfidf": 0.2272,
+        "peak_week": "2020-W19",
+        "peak_tfidf": 0.2272
+      },
+      {
+        "word": "急先锋",
+        "avg_tfidf": 0.2241,
+        "peak_week": "2020-W36",
+        "peak_tfidf": 0.3935
+      },
+      {
+        "word": "烈士",
+        "avg_tfidf": 0.2221,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.2221
+      },
+      {
+        "word": "水貂",
+        "avg_tfidf": 0.2184,
+        "peak_week": "2020-W45",
+        "peak_tfidf": 0.2184
+      },
+      {
+        "word": "总医院",
+        "avg_tfidf": 0.2156,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.2156
+      },
+      {
+        "word": "震荡",
+        "avg_tfidf": 0.215,
+        "peak_week": "2020-W36",
+        "peak_tfidf": 0.215
+      },
+      {
+        "word": "华南",
+        "avg_tfidf": 0.2126,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.2126
+      }
+    ],
+    "joy": [
+      {
+        "word": "电影院",
+        "avg_tfidf": 0.5615,
+        "peak_week": "2020-W29",
+        "peak_tfidf": 0.5615
+      },
+      {
+        "word": "行者",
+        "avg_tfidf": 0.5608,
+        "peak_week": "2020-W38",
+        "peak_tfidf": 0.5608
+      },
+      {
+        "word": "表彰大会",
+        "avg_tfidf": 0.5135,
+        "peak_week": "2020-W37",
+        "peak_tfidf": 0.5135
+      },
+      {
+        "word": "打卡",
+        "avg_tfidf": 0.4766,
+        "peak_week": "2020-W08",
+        "peak_tfidf": 0.4766
+      },
+      {
+        "word": "工资",
+        "avg_tfidf": 0.3317,
+        "peak_week": "2020-W53",
+        "peak_tfidf": 0.3432
+      },
+      {
+        "word": "新发",
+        "avg_tfidf": 0.3304,
+        "peak_week": "2020-W25",
+        "peak_tfidf": 0.343
+      },
+      {
+        "word": "个股",
+        "avg_tfidf": 0.3236,
+        "peak_week": "2020-W36",
+        "peak_tfidf": 0.3236
+      },
+      {
+        "word": "退热",
+        "avg_tfidf": 0.3081,
+        "peak_week": "2019-W51",
+        "peak_tfidf": 0.3081
+      },
+      {
+        "word": "导弹",
+        "avg_tfidf": 0.2718,
+        "peak_week": "2019-W51",
+        "peak_tfidf": 0.2718
+      },
+      {
+        "word": "最美",
+        "avg_tfidf": 0.2592,
+        "peak_week": "2020-W38",
+        "peak_tfidf": 0.5723
+      },
+      {
+        "word": "郫都区",
+        "avg_tfidf": 0.2512,
+        "peak_week": "2020-W50",
+        "peak_tfidf": 0.2512
+      },
+      {
+        "word": "全民",
+        "avg_tfidf": 0.2425,
+        "peak_week": "2020-W53",
+        "peak_tfidf": 0.2425
+      },
+      {
+        "word": "教师",
+        "avg_tfidf": 0.2351,
+        "peak_week": "2020-W37",
+        "peak_tfidf": 0.2351
+      },
+      {
+        "word": "东亚",
+        "avg_tfidf": 0.229,
+        "peak_week": "2019-W51",
+        "peak_tfidf": 0.229
+      },
+      {
+        "word": "蔡徐坤",
+        "avg_tfidf": 0.2272,
+        "peak_week": "2020-W19",
+        "peak_tfidf": 0.2272
+      },
+      {
+        "word": "急先锋",
+        "avg_tfidf": 0.2241,
+        "peak_week": "2020-W36",
+        "peak_tfidf": 0.3935
+      },
+      {
+        "word": "水貂",
+        "avg_tfidf": 0.2184,
+        "peak_week": "2020-W45",
+        "peak_tfidf": 0.2184
+      },
+      {
+        "word": "律师",
+        "avg_tfidf": 0.2156,
+        "peak_week": "2020-W18",
+        "peak_tfidf": 0.2156
+      },
+      {
+        "word": "震荡",
+        "avg_tfidf": 0.215,
+        "peak_week": "2020-W36",
+        "peak_tfidf": 0.215
+      },
+      {
+        "word": "青春",
+        "avg_tfidf": 0.2124,
+        "peak_week": "2020-W19",
+        "peak_tfidf": 0.3281
+      },
+      {
+        "word": "批发市场",
+        "avg_tfidf": 0.21,
+        "peak_week": "2020-W24",
+        "peak_tfidf": 0.21
+      },
+      {
+        "word": "成渝",
+        "avg_tfidf": 0.2013,
+        "peak_week": "2020-W24",
+        "peak_tfidf": 0.2013
+      },
+      {
+        "word": "勋章",
+        "avg_tfidf": 0.2011,
+        "peak_week": "2020-W37",
+        "peak_tfidf": 0.2011
+      },
+      {
+        "word": "成都",
+        "avg_tfidf": 0.197,
+        "peak_week": "2020-W50",
+        "peak_tfidf": 0.3542
+      },
+      {
+        "word": "听好",
+        "avg_tfidf": 0.1945,
+        "peak_week": "2020-W53",
+        "peak_tfidf": 0.2028
+      },
+      {
+        "word": "着数",
+        "avg_tfidf": 0.1827,
+        "peak_week": "2020-W53",
+        "peak_tfidf": 0.1906
+      },
+      {
+        "word": "足足有",
+        "avg_tfidf": 0.1827,
+        "peak_week": "2020-W53",
+        "peak_tfidf": 0.1906
+      },
+      {
+        "word": "捐助",
+        "avg_tfidf": 0.1814,
+        "peak_week": "2020-W08",
+        "peak_tfidf": 0.1814
+      },
+      {
+        "word": "痉挛",
+        "avg_tfidf": 0.1811,
+        "peak_week": "2020-W45",
+        "peak_tfidf": 0.1811
+      },
+      {
+        "word": "王菲",
+        "avg_tfidf": 0.1801,
+        "peak_week": "2020-W19",
+        "peak_tfidf": 0.1801
+      }
+    ],
+    "fear": [
+      {
+        "word": "不明",
+        "avg_tfidf": 0.3772,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.3772
+      },
+      {
+        "word": "海鲜城",
+        "avg_tfidf": 0.269,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.269
+      },
+      {
+        "word": "断定",
+        "avg_tfidf": 0.2295,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.2295
+      },
+      {
+        "word": "总医院",
+        "avg_tfidf": 0.2156,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.2156
+      },
+      {
+        "word": "华南",
+        "avg_tfidf": 0.2126,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.2126
+      },
+      {
+        "word": "急诊科",
+        "avg_tfidf": 0.2071,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.2071
+      },
+      {
+        "word": "病毒性",
+        "avg_tfidf": 0.1927,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.1927
+      },
+      {
+        "word": "病情",
+        "avg_tfidf": 0.1894,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.1894
+      },
+      {
+        "word": "经营户",
+        "avg_tfidf": 0.1831,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.1831
+      },
+      {
+        "word": "新闻周刊",
+        "avg_tfidf": 0.1418,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.1418
+      },
+      {
+        "word": "急诊",
+        "avg_tfidf": 0.131,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.131
+      },
+      {
+        "word": "报销",
+        "avg_tfidf": 0.1294,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.1294
+      },
+      {
+        "word": "武汉市",
+        "avg_tfidf": 0.122,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.122
+      },
+      {
+        "word": "营养液",
+        "avg_tfidf": 0.1145,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.1145
+      },
+      {
+        "word": "变差",
+        "avg_tfidf": 0.1145,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.1145
+      },
+      {
+        "word": "住院部",
+        "avg_tfidf": 0.1062,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.1062
+      },
+      {
+        "word": "身体",
+        "avg_tfidf": 0.1024,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.1024
+      },
+      {
+        "word": "限额",
+        "avg_tfidf": 0.0998,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0998
+      },
+      {
+        "word": "输液",
+        "avg_tfidf": 0.0946,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0946
+      },
+      {
+        "word": "紧急通知",
+        "avg_tfidf": 0.087,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.087
+      },
+      {
+        "word": "救治",
+        "avg_tfidf": 0.0833,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0833
+      },
+      {
+        "word": "收治",
+        "avg_tfidf": 0.0829,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0829
+      },
+      {
+        "word": "矛盾",
+        "avg_tfidf": 0.082,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.082
+      },
+      {
+        "word": "肺部",
+        "avg_tfidf": 0.0819,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0819
+      },
+      {
+        "word": "家属",
+        "avg_tfidf": 0.0802,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0802
+      },
+      {
+        "word": "病因",
+        "avg_tfidf": 0.0776,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0776
+      },
+      {
+        "word": "花费",
+        "avg_tfidf": 0.0771,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0771
+      },
+      {
+        "word": "可控",
+        "avg_tfidf": 0.0763,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0763
+      },
+      {
+        "word": "程远州",
+        "avg_tfidf": 0.0744,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0744
+      },
+      {
+        "word": "终末",
+        "avg_tfidf": 0.0743,
+        "peak_week": "2020-W01",
+        "peak_tfidf": 0.0743
+      }
+    ],
+    "sadness": [
+      {
+        "word": "哀悼",
+        "avg_tfidf": 0.5101,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.5101
+      },
+      {
+        "word": "同胞",
+        "avg_tfidf": 0.3774,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.3774
+      },
+      {
+        "word": "缅怀",
+        "avg_tfidf": 0.3627,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.3627
+      },
+      {
+        "word": "清明",
+        "avg_tfidf": 0.2869,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.2869
+      },
+      {
+        "word": "逝去",
+        "avg_tfidf": 0.2449,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.2449
+      },
+      {
+        "word": "逝世",
+        "avg_tfidf": 0.237,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.237
+      },
+      {
+        "word": "烈士",
+        "avg_tfidf": 0.2221,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.2221
+      },
+      {
+        "word": "来得及",
+        "avg_tfidf": 0.1869,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.1869
+      },
+      {
+        "word": "告别",
+        "avg_tfidf": 0.1612,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.1612
+      },
+      {
+        "word": "牺牲",
+        "avg_tfidf": 0.1583,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.1583
+      },
+      {
+        "word": "发条",
+        "avg_tfidf": 0.152,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.152
+      },
+      {
+        "word": "英雄",
+        "avg_tfidf": 0.0987,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0987
+      },
+      {
+        "word": "默哀",
+        "avg_tfidf": 0.0738,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0738
+      },
+      {
+        "word": "逝者",
+        "avg_tfidf": 0.0691,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0691
+      },
+      {
+        "word": "高考",
+        "avg_tfidf": 0.0663,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0663
+      },
+      {
+        "word": "鸣笛",
+        "avg_tfidf": 0.0562,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0562
+      },
+      {
+        "word": "牛奶",
+        "avg_tfidf": 0.0529,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0529
+      },
+      {
+        "word": "舰船",
+        "avg_tfidf": 0.0508,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0508
+      },
+      {
+        "word": "安息",
+        "avg_tfidf": 0.0507,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0507
+      },
+      {
+        "word": "图卷",
+        "avg_tfidf": 0.0483,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0483
+      },
+      {
+        "word": "全国性",
+        "avg_tfidf": 0.0452,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0452
+      },
+      {
+        "word": "延期",
+        "avg_tfidf": 0.0397,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0397
+      },
+      {
+        "word": "插队",
+        "avg_tfidf": 0.0387,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0387
+      },
+      {
+        "word": "江歌",
+        "avg_tfidf": 0.0387,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0387
+      },
+      {
+        "word": "铭记",
+        "avg_tfidf": 0.0386,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0386
+      },
+      {
+        "word": "投资",
+        "avg_tfidf": 0.0384,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0384
+      },
+      {
+        "word": "火车",
+        "avg_tfidf": 0.0365,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0365
+      },
+      {
+        "word": "深切",
+        "avg_tfidf": 0.0346,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0346
+      },
+      {
+        "word": "追思",
+        "avg_tfidf": 0.0299,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0299
+      },
+      {
+        "word": "剪辑",
+        "avg_tfidf": 0.0294,
+        "peak_week": "2020-W14",
+        "peak_tfidf": 0.0294
+      }
+    ],
+    "anger": [],
+    "surprise": []
+  }
+}
