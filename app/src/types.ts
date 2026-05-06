@@ -1,4 +1,5 @@
 import type { EmotionKey } from "./config";
+import type { NlpData } from "./types/nlp";
 
 export type NumericEmotionFields = Record<`${EmotionKey}_mean`, number>;
 
@@ -110,4 +111,5 @@ export interface DataBundle {
   monthlyClusters: MonthlyClusterMatrix;
   postExamples: PostExamplesPayload;
   chinaGeoJson: unknown;
+  nlp: NlpData;
 }

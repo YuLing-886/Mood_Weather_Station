@@ -1,8 +1,10 @@
 import { useMemo, useState, type CSSProperties } from "react";
 import { ChartCard } from "../components/ChartCard";
 import { EmptyState } from "../components/StateViews";
+import { NlpPanel } from "../components/NlpPanel";
 import { EMOTION_META, EMOTIONS, SEVERITY_ORDER, type EmotionKey } from "../config";
 import type { AnomalyEvent, DataBundle } from "../types";
+import type { NlpKeywordsByWeek, NlpEmotionKeywords } from "../types/nlp";
 import { severityLabel, zScoreDescription, deviationDescription } from "../utils/metricLabels";
 import { dateWeekToShortRange, dateWeekToFullRange } from "../utils/dateUtils";
 import { MethodDrawer } from "../components/MethodDrawer";
@@ -26,6 +28,7 @@ function friendlyEventDescription(event: AnomalyEvent): string {
 export function EventTimeline({ data }: EventTimelineProps) {
   const [emotion, setEmotion] = useState<EmotionFilter>("all");
   const [severity, setSeverity] = useState<SeverityFilter>("all");
+  const [expandedWeek, setExpandedWeek] = useState<string | null>(null);
 
   const events = useMemo(() => {
     return [...data.anomalies]
@@ -37,6 +40,10 @@ export function EventTimeline({ data }: EventTimelineProps) {
         return (SEVERITY_ORDER[b.severity] ?? 0) - (SEVERITY_ORDER[a.severity] ?? 0);
       });
   }, [data.anomalies, emotion, severity]);
+
+  const handleToggleExpand = (weekKey: string) => {
+    setExpandedWeek(expandedWeek === weekKey ? null : weekKey);
+  };
 
   return (
     <div className={styles.pageStack}>
@@ -74,7 +81,14 @@ export function EventTimeline({ data }: EventTimelineProps) {
         {events.length ? (
           <div className={styles.timeline}>
             {events.map((event) => (
-              <EventNode event={event} key={`${event.date_week}-${event.emotion}-${event.z_score}`} />
+              <EventNode
+                event={event}
+                nlpData={data.nlp?.keywordsByWeek ?? null}
+                emotionKeywords={data.nlp?.emotionKeywords ?? null}
+                isExpanded={expandedWeek === event.date_week}
+                onToggleExpand={() => handleToggleExpand(event.date_week)}
+                key={`${event.date_week}-${event.emotion}-${event.z_score}`}
+              />
             ))}
           </div>
         ) : (
@@ -85,9 +99,21 @@ export function EventTimeline({ data }: EventTimelineProps) {
   );
 }
 
-function EventNode({ event }: { event: AnomalyEvent }) {
+function EventNode({ event, nlpData, emotionKeywords, isExpanded, onToggleExpand }: { event: AnomalyEvent; nlpData: NlpKeywordsByWeek | null; emotionKeywords: NlpEmotionKeywords | null; isExpanded: boolean; onToggleExpand: () => void }) {
   const color = EMOTION_META[event.emotion].color;
   const provinces = event.top_provinces.map((item) => String(item.province)).filter(Boolean);
+
+  const weekNlpData = nlpData?.weeks?.[event.date_week];
+  const hasNlpData = weekNlpData?.status === "ok" && weekNlpData.keywords.length > 0;
+
+  const topKeywords = useMemo(() => {
+    if (!hasNlpData) return [];
+    return weekNlpData.keywords
+      .filter((kw) => kw.surge)
+      .slice(0, 3)
+      .map((kw) => kw.word);
+  }, [hasNlpData, weekNlpData]);
+
   return (
     <article className={styles.timelineItem} style={{ "--event-color": color } as CSSProperties}>
       <div className={styles.timelineStem} />
@@ -97,7 +123,14 @@ function EventNode({ event }: { event: AnomalyEvent }) {
           <strong>{EMOTION_META[event.emotion].label}</strong>
           <em>{severityLabel(event.severity)}</em>
         </div>
-        <p>{friendlyEventDescription(event)}</p>
+        <p>
+          {friendlyEventDescription(event)}
+          {topKeywords.length > 0 && (
+            <span className={styles.keywordHint}>
+              这一周的高频关键词显示，讨论集中在 {topKeywords.join("、")} 等词。
+            </span>
+          )}
+        </p>
         <dl className={styles.eventStats}>
           <div>
             <dt>异常强度</dt>
@@ -117,6 +150,32 @@ function EventNode({ event }: { event: AnomalyEvent }) {
             <span key={province}>{province}</span>
           ))}
         </div>
+        <button
+          className={styles.expandToggle}
+          onClick={onToggleExpand}
+          aria-expanded={isExpanded}
+        >
+          {isExpanded ? "收起关键词分析" : "查看关键词分析"}
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            style={{ transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 200ms ease" }}
+          >
+            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        {isExpanded && (
+          <div className={styles.nlpPanelWrap}>
+            <NlpPanel
+              weekKey={event.date_week}
+              emotion={event.emotion}
+              nlpData={nlpData}
+              emotionKeywords={emotionKeywords}
+            />
+          </div>
+        )}
       </div>
     </article>
   );

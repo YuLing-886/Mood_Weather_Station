@@ -11,6 +11,7 @@ import type {
   ProvinceVector,
   ProvinceWeek
 } from "../types";
+import type { NlpData, NlpKeywordsByWeek, NlpEmotionKeywords, NlpGlobalVocabulary } from "../types/nlp";
 import { normalizeProvinceName } from "../utils/province";
 
 type CsvRow = Record<string, string>;
@@ -188,7 +189,10 @@ async function loadMoodDataInner(): Promise<DataBundle> {
     monthlyRows,
     anomalies,
     postExamples,
-    chinaGeoJson
+    chinaGeoJson,
+    nlpKeywordsByWeek,
+    nlpEmotionKeywords,
+    nlpGlobalVocabulary
   ] = await Promise.all([
     fetchCsv("data/processed/emotion_national_timeline.csv").catch((e) => { throw new Error(`加载全国时序失败: ${e}`); }),
     fetchCsv("data/processed/emotion_panel_weekly.csv").catch((e) => { throw new Error(`加载周面板失败: ${e}`); }),
@@ -202,7 +206,10 @@ async function loadMoodDataInner(): Promise<DataBundle> {
       emotions: [...EMOTIONS],
       provinces: {}
     }),
-    fetchJson<unknown>("data/geo/china.json", null)
+    fetchJson<unknown>("data/geo/china.json", null),
+    fetchJson<NlpKeywordsByWeek | null>("data/processed/nlp_keywords_by_week.json", null),
+    fetchJson<NlpEmotionKeywords | null>("data/processed/nlp_emotion_keywords.json", null),
+    fetchJson<NlpGlobalVocabulary | null>("data/processed/nlp_global_vocabulary.json", null),
   ]);
 
   const clusterLabels = parseClusterLabels(clusterRows);
@@ -215,6 +222,11 @@ async function loadMoodDataInner(): Promise<DataBundle> {
     monthlyClusters: parseMonthlyClusters(monthlyRows),
     anomalies: anomalies ?? [],
     postExamples: normalizePostExamples(postExamples),
-    chinaGeoJson
+    chinaGeoJson,
+    nlp: {
+      keywordsByWeek: nlpKeywordsByWeek,
+      emotionKeywords: nlpEmotionKeywords,
+      globalVocabulary: nlpGlobalVocabulary,
+    },
   };
 }

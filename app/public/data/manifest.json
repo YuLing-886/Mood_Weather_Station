@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T16:36:23.366319",
+  "generated_at": "2026-05-06T17:22:45.117774",
   "files": [
     {
       "path": "data/processed/emotion_panel_weekly.csv",
@@ -44,11 +44,25 @@
       "size_bytes": 525
     },
     {
-      "path": "data/processed/monthly_cluster_labels.csv",
-      "source": "tmp\\07_monthly_cluster_labels.csv",
-      "hash": "6078237e929b",
-      "row_count": 34,
-      "size_bytes": 1323
+      "path": "data/processed/nlp_keywords_by_week.json",
+      "source": "data\\processed\\nlp_keywords_by_week.json",
+      "hash": "ac6eeefd5289",
+      "row_count": 1,
+      "size_bytes": 671311
+    },
+    {
+      "path": "data/processed/nlp_emotion_keywords.json",
+      "source": "data\\processed\\nlp_emotion_keywords.json",
+      "hash": "f47550be66e4",
+      "row_count": 1,
+      "size_bytes": 17138
+    },
+    {
+      "path": "data/processed/nlp_global_vocabulary.json",
+      "source": "data\\processed\\nlp_global_vocabulary.json",
+      "hash": "c5c6a553c5fb",
+      "row_count": 1,
+      "size_bytes": 737744
     },
     {
       "path": "analysis\\wordclouds\\national_peak_fear.png",
@@ -134,5 +148,6 @@
       "row_count": "N/A (image)",
       "size_bytes": 151605
     }
-  ]
+  ],
+  "nlp_keywords_available": true
 }

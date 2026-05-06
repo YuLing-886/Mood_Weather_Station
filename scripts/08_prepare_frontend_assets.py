@@ -26,6 +26,12 @@ FILES_TO_COPY = [
     ("tmp/07_monthly_cluster_labels.csv", "data/processed/monthly_cluster_labels.csv"),
 ]
 
+NLP_FILES = [
+    ("data/processed/nlp_keywords_by_week.json", "data/processed/nlp_keywords_by_week.json"),
+    ("data/processed/nlp_emotion_keywords.json", "data/processed/nlp_emotion_keywords.json"),
+    ("data/processed/nlp_global_vocabulary.json", "data/processed/nlp_global_vocabulary.json"),
+]
+
 IMAGE_GLOBS = [
     "analysis/emotion_validation/*.png",
     "analysis/province_clustering/*.png",
@@ -141,6 +147,39 @@ def main():
         copied += 1
         print(f"  [OK] {src_rel} -> {dst_rel} ({row_count} rows)" if row_count >= 0
               else f"  [OK] {src_rel} -> {dst_rel}")
+
+    # Copy NLP files (optional, don't fail if missing)
+    nlp_available = True
+    nlp_files_to_copy = [
+        (data_dir / "nlp_keywords_by_week.json", "data/processed/nlp_keywords_by_week.json"),
+        (data_dir / "nlp_emotion_keywords.json", "data/processed/nlp_emotion_keywords.json"),
+        (data_dir / "nlp_global_vocabulary.json", "data/processed/nlp_global_vocabulary.json"),
+    ]
+    for src, dst_rel in nlp_files_to_copy:
+        src_rel = str(src.relative_to(ROOT)) if src.is_relative_to(ROOT) else str(src)
+        dst = app_public / dst_rel
+
+        if not src.exists():
+            nlp_available = False
+            print(f"  [SKIP] NLP file not found: {src_rel}")
+            continue
+
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dst)
+        row_count = count_rows(dst)
+        file_hash = sha256_short(dst)
+
+        manifest["files"].append({
+            "path": dst_rel,
+            "source": src_rel,
+            "hash": file_hash,
+            "row_count": row_count,
+            "size_bytes": dst.stat().st_size,
+        })
+        copied += 1
+        print(f"  [OK] {src_rel} -> {dst_rel} (NLP)")
+
+    manifest["nlp_keywords_available"] = nlp_available
 
     # Copy images
     image_dirs = [

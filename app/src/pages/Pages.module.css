@@ -123,6 +123,12 @@
   border-radius: 14px;
   background: var(--surface-warm);
   border: 1px solid var(--border);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms ease;
+}
+
+.anomalyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 50, 80, 0.07);
 }
 
 .anomalyCard strong {
@@ -173,7 +179,7 @@
   color: var(--text-secondary);
   background: var(--surface);
   cursor: pointer;
-  transition: all 180ms ease;
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
   font-size: 12px;
 }
 
@@ -183,6 +189,7 @@
   color: var(--text);
   background: var(--accent-soft);
   outline: none;
+  transform: translateY(-1px);
 }
 
 .activePill {
@@ -203,6 +210,12 @@
   border-radius: 16px;
   background: var(--surface-warm);
   border: 1px solid var(--border);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms ease;
+}
+
+.postItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 50, 80, 0.07);
 }
 
 .postItem div {
@@ -323,6 +336,12 @@
   border-radius: 16px;
   border: 1px solid color-mix(in srgb, var(--event-color), transparent 58%);
   background: var(--surface);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms ease;
+}
+
+.timelineContent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 50, 80, 0.07);
 }
 
 .timelineTopline,
@@ -410,18 +429,21 @@
   color: var(--text-secondary);
   font-size: 12px;
   cursor: pointer;
-  transition: all 180ms ease;
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .mapSwitcher button:hover {
   border-color: var(--accent);
   color: var(--text);
+  transform: translateY(-1px);
 }
 
 .mapSwitcher .activeMapBtn {
   color: var(--surface-solid);
   background: linear-gradient(135deg, var(--accent), var(--accent-deep));
   border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 125, 216, 0.18);
 }
 
 .mapAttribution {
@@ -451,12 +473,40 @@
   color: var(--text-secondary);
   font-size: 12px;
   cursor: pointer;
-  transition: all 180ms ease;
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  margin-top: 12px;
 }
 
 .expandToggle:hover {
   border-color: var(--accent);
   color: var(--text);
+  transform: translateY(-1px);
+}
+
+/* NLP panel wrapper in timeline */
+.nlpPanelWrap {
+  margin-top: 14px;
+  animation: nlpExpand 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes nlpExpand {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyword hint in timeline description */
+.keywordHint {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 /* Cluster explanation cards */
@@ -472,6 +522,12 @@
   border-radius: 16px;
   border: 1px solid var(--border);
   background: var(--surface-warm);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms ease;
+}
+
+.clusterExplainCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 50, 80, 0.07);
 }
 
 .clusterExplainCard h4 {

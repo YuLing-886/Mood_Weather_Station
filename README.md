@@ -11,6 +11,7 @@
 | 算法 | 应用场景 | 实现 |
 |---|---|---|
 | **LLM 文本分类** | DeepSeek API 对 76,441 条微博进行 6 维情绪标注 | `scripts/02_label_emotions.py` |
+| **中文 NLP 分词 + TF-IDF** | jieba 分词 + 词性过滤 + TF-IDF 提取异常周关键词，解释情绪异常背后的语义 | `scripts/04b_nlp_keywords.py` |
 | **Rolling Z-Score 异常检测** | 对全国情绪时序做滑动窗口检测，识别情绪突变周 | `scripts/05_detect_anomalies.py` |
 | **层次聚类 (Agglomerative Clustering)** | 基于省份情绪特征向量做层次聚类，生成 dendrogram | `scripts/06_cluster_provinces.py` |
 | **KMeans 聚类** | 与层次聚类对照，通过轮廓系数选择最优 K | `scripts/06_cluster_provinces.py` |
@@ -26,16 +27,18 @@
 - **中国情绪地图** — 34 省气泡图，支持情绪温度 / 6 维情绪 / 主导情绪切换
 - **省份详情** — 单省情绪曲线、月度趋势、样本量
 - **聚类分析** — 层次聚类 + KMeans，省份画像和演化热力图
-- **事件时间线** — rolling z-score 异常检测，贡献省份 Top 5
+- **事件时间线** — rolling z-score 异常检测，贡献省份 Top 5，点击展开 NLP 关键词分析面板
+- **NLP 词云分析** — 异常周关键词提取，交互式词云 + Top 20 排行 + 飙升词检测，解释情绪异常背后的语义驱动力
 
 ## 技术栈
 
 | 层 | 技术 |
 |---|---|
 | 数据处理 | Python 3.12, pandas, scikit-learn, scipy |
+| NLP 分词 | jieba, jieba.posseg, sklearn TfidfVectorizer |
 | 情绪标注 | DeepSeek API (OpenAI SDK 兼容) |
 | 验证基准 | SMP2020-EWECT (Accuracy 73.3%, Macro F1 0.662) |
-| 前端 | React 18, TypeScript, ECharts, Framer Motion |
+| 前端 | React 18, TypeScript, ECharts, echarts-wordcloud, Framer Motion |
 | 构建 | Vite 7, CSS Modules |
 | 部署 | Cloudflare Pages |
 
@@ -60,6 +63,7 @@ pip install -r requirements.txt
 
 # 运行聚合管线（需要先完成标注）
 python scripts/04_aggregate_emotions.py
+python scripts/04b_nlp_keywords.py    # NLP 关键词提取
 python scripts/05_detect_anomalies.py
 python scripts/06_cluster_provinces.py
 python scripts/07_cluster_evolution.py
@@ -97,6 +101,7 @@ Mood_Weather_Station/
 | 02 | `02_label_emotions.py` | DeepSeek 6 维情绪标注 |
 | 03 | `03_validate_emotions.py` | SMP2020 外部验证 |
 | 04 | `04_aggregate_emotions.py` | 周/月/省聚合 |
+| 04b | `04b_nlp_keywords.py` | NLP 关键词提取 (jieba + TF-IDF) |
 | 05 | `05_detect_anomalies.py` | 异常检测 (z-score) |
 | 06 | `06_cluster_provinces.py` | 省份聚类 |
 | 07 | `07_cluster_evolution.py` | 聚类演化 |
