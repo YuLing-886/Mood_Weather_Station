@@ -1,0 +1,38 @@
+# scripts/spider.py
+import requests
+import pandas as pd
+import time
+from datetime import datetime
+
+def crawl_weibo_like_data():
+    """
+    爬虫主函数：
+    从网络爬取数据，并返回和项目格式一致的 DataFrame
+    字段必须包含：_id, user_id, created_at, content, user_id
+    """
+    print("正在从网络爬取数据...")
+
+    # ======================
+    # 在这里写你的爬虫逻辑
+    # 示例：模拟返回数据（你可以替换成真实爬取）
+    # ======================
+    data = [
+        {"_id": 1, "user_id": 1001, "created_at": "2020-01-01 12:00:00", "content": "今天天气不错"},
+        {"_id": 2, "user_id": 1002, "created_at": "2020-01-01 13:00:00", "content": "疫情快点结束吧"},
+    ]
+
+    # 如果你要爬真实网址，可以这样：
+    # res = requests.get("https://weibo.com/u/1784473157.com/api/posts")
+    # data = res.json()
+
+    df = pd.DataFrame(data)
+    print(f"爬取完成，共 {len(df)} 条数据")
+    return df
+
+def crawl_user_data():
+    """爬取用户-省份对应数据"""
+    data = [
+        {"user_id": 1001, "province": "北京"},
+        {"user_id": 1002, "province": "上海"},
+    ]
+    return pd.DataFrame(data)
